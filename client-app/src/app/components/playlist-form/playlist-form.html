@@ -1,1 +1,28 @@
-<p>playlist-form works!</p>
+
+<div class="container mt-4">
+  <h2>Crear Playlist</h2>
+  <form (ngSubmit)="submit()">
+    <div class="mb-3">
+      <label class="form-label">Nombre</label>
+      <input class="form-control" [(ngModel)]="nombre" name="nombre" required />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Descripción</label>
+      <input class="form-control" [(ngModel)]="descripcion" name="descripcion" />
+    </div>
+
+    <h4>Canciones</h4>
+    <app-song-detail
+      *ngFor="let song of canciones; let i = index"
+      [song]="song"
+      [index]="i"
+      (remove)="removeSong($event)">
+    </app-song-detail>
+
+    <button type="button" class="btn btn-secondary mb-3" (click)="addSong()">+ Añadir Canción</button>
+
+    <div>
+      <button class="btn btn-primary" type="submit">Guardar Playlist</button>
+    </div>
+  </form>
+</div>

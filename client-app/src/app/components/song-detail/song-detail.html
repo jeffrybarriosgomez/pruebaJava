@@ -1,0 +1,20 @@
+<div class="row mb-2">
+  <div class="col">
+    <input type="text" class="form-control" [(ngModel)]="song.titulo" placeholder="Título">
+  </div>
+  <div class="col">
+    <input type="text" class="form-control" [(ngModel)]="song.artista" placeholder="Artista">
+  </div>
+  <div class="col">
+    <input type="text" class="form-control" [(ngModel)]="song.album" placeholder="Álbum">
+  </div>
+  <div class="col">
+    <input type="text" class="form-control" [(ngModel)]="song.anno" placeholder="Año">
+  </div>
+  <div class="col">
+    <input type="text" class="form-control" [(ngModel)]="song.genero" placeholder="Género">
+  </div>
+  <div class="col-auto">
+    <button class="btn btn-danger" type="button" (click)="removeSong()">X</button>
+  </div>
+</div>

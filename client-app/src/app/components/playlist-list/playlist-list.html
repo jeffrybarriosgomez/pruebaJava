@@ -1,10 +1,12 @@
 <div class="container mt-4">
   <h2>Playlists</h2>
-  <table class="table table-striped" *ngIf="playlists.length">
+
+  <table class="table table-striped" *ngIf="playlists.length > 0">
     <thead>
       <tr>
         <th>Nombre</th>
         <th>Descripción</th>
+        <th>Canciones</th>
         <th>Acciones</th>
       </tr>
     </thead>
@@ -13,10 +15,21 @@
         <td>{{ p.nombre }}</td>
         <td>{{ p.descripcion }}</td>
         <td>
+          <ul *ngIf="p.canciones.length > 0; else noSongs">
+            <li *ngFor="let song of p.canciones">
+              {{ song.titulo }} - {{ song.artista }}
+            </li>
+          </ul>
+          <ng-template #noSongs>
+            <em>Sin canciones</em>
+          </ng-template>
+        </td>
+        <td>
           <button class="btn btn-danger btn-sm" (click)="delete(p.nombre)">Eliminar</button>
         </td>
       </tr>
     </tbody>
   </table>
-  <p *ngIf="!playlists.length">No hay playlists</p>
+
+  <p *ngIf="playlists.length == 0">No hay playlists</p>
 </div>

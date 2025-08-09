@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-playlist-list',
   imports: [CommonModule, RouterModule],
+  standalone: true,
   templateUrl: './playlist-list.html',
   styleUrl: './playlist-list.css'
 })
@@ -15,18 +16,19 @@ export class PlaylistList implements OnInit {
   constructor(private playlistService: PlaylistService) {}
 
   ngOnInit(): void {
+    console.log('ngOnInit ejecutado');
     this.loadPlaylists();
   }
 
   loadPlaylists() {
-  this.playlistService.getPlaylists().subscribe({
-    next: (data) => {
-      this.playlists = data;
-      console.log('Datos recibidos:', this.playlists);
-    },
-    error: (err) => console.error('Error al cargar playlists', err)
-  });
-}
+    this.playlistService.getPlaylists().subscribe({
+      next: (data) => {
+        console.log('Respuesta del API:', data);
+        this.playlists = data;
+      },
+      error: (err) => console.error('Error al cargar playlists', err)
+    });
+  }
 
   delete(nombre: string) {
     if (confirm(`¿Eliminar playlist "${nombre}"?`)) {
