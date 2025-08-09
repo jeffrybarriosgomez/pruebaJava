@@ -1,6 +1,7 @@
 package com.quipux.pruebaJava.service;
 import com.quipux.pruebaJava.entity.PlayList;
 import com.quipux.pruebaJava.repository.PlaylistRepository;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -30,6 +31,7 @@ public class PlaylistServiceImpl implements PlaylistService {
     }
 
     @Override
+    @Transactional
     public void deleteByNombre(String nombre) {
         playlistRepository.deleteByNombre(nombre);
     }
