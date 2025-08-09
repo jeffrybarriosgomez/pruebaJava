@@ -1,0 +1,22 @@
+<div class="container mt-4">
+  <h2>Playlists</h2>
+  <table class="table table-striped" *ngIf="playlists.length">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of playlists">
+        <td>{{ p.nombre }}</td>
+        <td>{{ p.descripcion }}</td>
+        <td>
+          <button class="btn btn-danger btn-sm" (click)="delete(p.nombre)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p *ngIf="!playlists.length">No hay playlists</p>
+</div>
