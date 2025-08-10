@@ -1,9 +1,11 @@
 # Prueba Java III
 
 ## Descripción
-Prueba Java III es una aplicación desarrollada con **Spring Boot** que implementa una solución backend para para gestionar albumes con cancipones. Utiliza una base de datos en memoria H2 para pruebas y desarrollo, y cuenta con funcionalidades de seguridad, validación de datos y persistencia mediante JPA.
+Prueba Java III es una aplicación desarrollada con **Spring Boot** y un frontend desarrollado con **Angular v20** que implementa una solución backend para para gestionar albumes con cancipones. Utiliza una base de datos en memoria H2 para pruebas y desarrollo, y cuenta con funcionalidades de seguridad, validación de datos y persistencia mediante JPA.
 
 ## Tecnologías utilizadas
+### Backend
+
 - **Java**: Versión 17
 - **Spring Boot**: Versión 3.5.4
 - **Dependencias principales**:
@@ -14,7 +16,11 @@ Prueba Java III es una aplicación desarrollada con **Spring Boot** que implemen
     - `h2`: Base de datos en memoria para desarrollo y pruebas.
     - `lombok`: Para reducir el código repetitivo mediante anotaciones.
     - `spring-boot-starter-test` y `spring-security-test`: Para pruebas unitarias e integración.
-
+### Frontend
+- **Angular**: Versión 20
+- **Node.js**: Versión 22.14.0
+- **npm**: Versión 11.5.2
+- 
 ## Requisitos previos
 - **Java 17** o superior instalado.
 - **Maven** instalado para gestionar dependencias y construir el proyecto.
