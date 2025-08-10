@@ -18,9 +18,14 @@ Prueba Java III es una aplicación desarrollada con **Spring Boot** que implemen
 ## Requisitos previos
 - **Java 17** o superior instalado.
 - **Maven** instalado para gestionar dependencias y construir el proyecto.
+- **Frontend**:
+- **Node.js 22.14.0**.
+- **npm** (viene con Node.js) para instalar las dependencias de Angular.
 - Opcional: Un IDE como IntelliJ IDEA, para facilitar el desarrollo.
 
 ## Instalación
+### Backend
+
 1. Clona el repositorio:
    ```bash
    git clone https://github.com/jeffrybarriosgomez/pruebaJava.git
@@ -33,13 +38,39 @@ Prueba Java III es una aplicación desarrollada con **Spring Boot** que implemen
    ```bash
    mvn clean install
    ```
+### Frontend
+1. Inatalacion de Angular CLI
+    ```bash
+    npm install -g @angular/cli
+    ```
+2. Navega al directorio del client-app (por ejemplo, `client-app`):
+   ```bash
+   cd client-app
+   ```
+3. Instala las dependencias de Angular usando npm:
+   ```bash
+   npm install
+   ```
+
 
 ## Ejecución
-Para ejecutar la aplicación en modo desarrollo:
+
+### Backend
+Para ejecutar la aplicación backend en modo desarrollo:
 ```bash
-  mvn spring-boot:run
+   mvn spring-boot:run
 ```
 La aplicación estará disponible en `http://localhost:8080`.
+
+### Frontend
+Para ejecutar la aplicación frontend:
+1. Asegúrate de estar en el directorio del client-app (`client-app`).
+2. Ejecuta el comando:
+   ```bash
+   npm run start
+   ```
+   La aplicación frontend estará disponible en `http://localhost:4200` (puerto por defecto de Angular, verifica la configuración si es necesario).
+
 
 ## Configuración
 - **Base de datos**: La aplicación utiliza una base de datos H2 en memoria por defecto. Puedes acceder a la consola de H2 en `http://localhost:8080/h2-console` (asegúrate de configurar las credenciales en `application.properties` si es necesario).
@@ -166,7 +197,10 @@ pruebaJava/
 │                       │   └── PlaylistControllerTest.java
 │                       └── PruebaJavaApplicationTests.java
 
-├── client-app //cliente rest
+├── client-app # Carpeta del frontend (Angular)
+│   ├── src/
+│   ├── package.json
+│   └── angular.json
 ├── pom.xml
 └── README.md
 ```
